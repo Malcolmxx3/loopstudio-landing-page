@@ -14,10 +14,23 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <div className='icons'>
-          <img src="images/icon-facebook.svg" />
-          <img src="images/icon-twitter.svg" />
-          <img src="images/icon-pinterest.svg" />
-          <img src="images/icon-instagram.svg" />
+          <div className="icon">
+            <img src="images/icon-facebook.svg" />
+          </div>
+
+          <div className="icon">
+            <img src="images/icon-twitter.svg" />
+          </div>
+
+          <div className="icon">
+            <img src="images/icon-pinterest.svg" />
+          </div>
+
+          <div className="icon">
+            <img src="images/icon-instagram.svg" />
+          </div>
+
+
         </div>
         <p className="copyright"><span>&copy;</span> 2021 Loopstudios. All rights reserverd</p>
       </div>
