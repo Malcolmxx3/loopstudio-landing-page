@@ -1,5 +1,28 @@
 const Header = ({ handleClick }) => {
 
+  const navlinks = [
+    {
+      name: 'About',
+      link: '#about'
+    },
+    {
+      name: 'Careers',
+      link: '#about' 
+    }, 
+    {
+      name: 'Events',
+      link: '#creation'
+    }, 
+    {
+      name: 'Products',
+      link: '#creation'
+    }, 
+    {
+      name: 'Support',
+      link: '#footer'
+    }
+  ]
+
   return (
     <header className="header wrapper">
       <div className="header-container">
@@ -8,11 +31,9 @@ const Header = ({ handleClick }) => {
         <img className="hamburger-icon" src="images/icon-hamburger.svg" alt="hambuger icon" onClick={handleClick} />
 
         <ul className="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#about">Careers</a></li>
-          <li><a href="#creation">Events</a></li>
-          <li><a href="#creation">Products</a></li>
-          <li><a href="#footer">Support</a></li>
+          {navlinks.map((item, index) => (
+            <li key={index}><a href={item.link}>{item.name}</a></li>
+          ))}
         </ul>
         
       </div>

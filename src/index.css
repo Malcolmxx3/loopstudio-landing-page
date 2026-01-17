@@ -30,17 +30,15 @@ body {
   background-color: hsl(0, 0%, 100%);
   width: 100vw;
 }
+
 /* Heading ⬇️⬇️*/
 
 .header {
   background-image: url('images/mobile/image-hero.jpg');
   width: 100%;
-  height: 100vh;
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   padding-block: 50px 200px;
-  z-index: 2;
-
 }
 
 a {
@@ -69,7 +67,8 @@ nav a:hover {
   width: 200px;
 }
 
-.hamburger-icon, .close-icon {
+.hamburger-icon,
+.close-icon {
   width: 30px;
   height: 25px;
   cursor: pointer;
@@ -83,11 +82,11 @@ nav a:hover {
   gap: 20px;
 }
 
-.nav-list > li {
+.nav-list>li {
   position: relative;
 }
 
-.nav-list > li::before {
+.nav-list>li::before {
   position: absolute;
   content: "";
   top: 35px;
@@ -98,7 +97,7 @@ nav a:hover {
   transition: width .3s ease;
 }
 
-.nav-list > li:hover:before {
+.nav-list>li:hover:before {
   width: 50%;
 }
 
@@ -132,14 +131,14 @@ nav a:hover {
   opacity: 0;
   z-index: 1;
   transition: left ease-in 0.3s, opacity 0.3s;
-} 
+}
 
 .show {
   left: 0;
   opacity: 1;
 }
- 
-nav > ul {
+
+nav>ul {
   color: white;
   list-style: none;
   margin-top: 150px;
@@ -151,7 +150,10 @@ nav > ul {
 /* About ⬇️⬇️*/
 
 .about-section {
-  margin-block: 90px 120px;
+  display: flex;
+  flex-direction: column;
+  margin-block: 120px;
+  gap: 60px;
 }
 
 .mobile-image {
@@ -182,7 +184,6 @@ nav > ul {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  margin-top: 60px;
 }
 
 .creation-section {
@@ -195,6 +196,7 @@ nav > ul {
   display: grid;
   gap: 35px;
   margin-top: 70px;
+
 }
 
 .image-wrapper {
@@ -238,9 +240,8 @@ nav > ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 50px;
   align-items: center;
-  padding-block: 50px;
+  height: 580px;
 }
 
 .footer-navs {
@@ -250,11 +251,11 @@ nav > ul {
   line-height: 50px;
 }
 
-.footer-navs > li {
+.footer-navs>li {
   position: relative;
 }
 
-.footer-navs > li::before {
+.footer-navs>li::before {
   position: absolute;
   content: "";
   top: 45px;
@@ -265,14 +266,14 @@ nav > ul {
   transition: width 0.3s ease;
 }
 
-.footer-navs > li:active {
+.footer-navs>li:active {
   color: hsl(0, 0%, 45%)
 }
 
 .footer-top {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 25px;
 }
 
 .footer-bottom {
@@ -288,12 +289,12 @@ nav > ul {
   gap: 25px;
 }
 
-.icons > .icon {
+.icons>.icon {
   position: relative;
   width: 25px;
 }
 
-.icons > .icon::before {
+.icons>.icon::before {
   position: absolute;
   content: "";
   top: 30px;
@@ -315,11 +316,13 @@ nav > ul {
 
 /* Media Queries ⬇️⬇️*/
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .header {
     background-image: url('./images/desktop/image-hero.jpg');
-    background-size: contain;
-  } 
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
   .hamburger-icon {
     display: none;
@@ -335,18 +338,29 @@ nav > ul {
   }
 
   .about-section {
-    max-height: 500px;
-    margin-top: -80px;
-
+    position: relative;
+    flex-direction: row;
+    width: 100%;
   }
 
   .about-message-ctn {
-    position: relative;
-    top: -300px;
-    left: 420px;
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
     width: 65%;
     background-color: white;
-    padding: 60px;
+    padding: 100px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    width: 37%;
+  }
+
+  .section-title {
+    text-align: left;
+  }
+
+  .about-message {
+    text-align: left;
   }
 
   .about-image {
@@ -356,6 +370,7 @@ nav > ul {
   .creation-image-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    justify-content: justify-between;
   }
 
   .desktop-btn {
@@ -387,6 +402,13 @@ nav > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 200px;
+  }
+
+  .footer-top {
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 0;
   }
 
   .footer-navs {
@@ -394,15 +416,18 @@ nav > ul {
     gap: 30px;
   }
 
-  .footer-navs > li:hover::before {
+  .footer-navs>li:hover::before {
     width: 50%;
   }
 
   .footer-bottom {
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 0;
     align-items: flex-end;
   }
 
-  .icons > .icon:hover::before {
+  .icons>.icon:hover::before {
     width: 100%;
   }
 }

@@ -1,4 +1,28 @@
 const Menu = ({ handleClick, menuOpen, setMenuOpen }) => {
+
+  const menulinks = [
+    {
+      name: 'ABOUT',
+      link: '#about'
+    },
+    {
+      name: 'CAREERS',
+      link: '#about' 
+    }, 
+    {
+      name: 'EVENTS',
+      link: '#creation'
+    }, 
+    {
+      name: 'PRODUCTS',
+      link: '#creation'
+    }, 
+    {
+      name: 'SUPPORT',
+      link: '#footer'
+    }
+  ]
+
   return (
     <div className={`menu wrapper ${menuOpen ? 'show' : ''}`}>
       <div className="header-container">
@@ -10,11 +34,9 @@ const Menu = ({ handleClick, menuOpen, setMenuOpen }) => {
 
       <nav>
         <ul>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>ABOUT</a></li>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>CAREERS</a></li>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>EVENTS</a></li>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>PRODUCTS</a></li>
-          <li><a href="#about" onClick={() => setMenuOpen(false)}>SUPPORT</a></li>
+          {menulinks.map((item, index) => (
+            <li key={index}><a href={item.link} onClick={() => setMenuOpen(false)}>{item.name}</a></li>
+          ))}
         </ul>
       </nav>
     </div>
