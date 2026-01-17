@@ -41,11 +41,11 @@ const Header = ({menuOpen, handleClick}) => {
   return (
     <header className={clsx('header', isScrolled && 'scrolled')}>
       <div className="header-container wrapper">
-        <img className="logo" src="images/logo.svg" />
+        <img className="logo" src="/images/logo.svg" />
         
         {menuOpen 
-          ? (<img className="close-icon" src="images/icon-close.svg" alt="close icon" onClick={handleClick} />)
-          : (<img className="hamburger-icon" src="images/icon-hamburger.svg" alt="hambuger icon" onClick={handleClick} />)}
+          ? (<img className="close-icon" src="/images/icon-close.svg" alt="close icon" onClick={handleClick} />)
+          : (<img className="hamburger-icon" src="/images/icon-hamburger.svg" alt="hambuger icon" onClick={handleClick} />)}
 
         {/* Navigation Links */}
         <ul className="nav-list">

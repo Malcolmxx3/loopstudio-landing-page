@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="footer wrapper" id="footer">
       <div className="footer-top">
-        <img className="logo" src="images/logo.svg" />
+        <img className="logo" src="/images/logo.svg" />
 
         <ul className="footer-navs">
           <li>About</li>
@@ -15,19 +15,19 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className='icons'>
           <div className="icon">
-            <img src="images/icon-facebook.svg" />
+            <img src="/images/icon-facebook.svg" />
           </div>
 
           <div className="icon">
-            <img src="images/icon-twitter.svg" />
+            <img src="/images/icon-twitter.svg" />
           </div>
 
           <div className="icon">
-            <img src="images/icon-pinterest.svg" />
+            <img src="/images/icon-pinterest.svg" />
           </div>
 
           <div className="icon">
-            <img src="images/icon-instagram.svg" />
+            <img src="/images/icon-instagram.svg" />
           </div>
 
 
