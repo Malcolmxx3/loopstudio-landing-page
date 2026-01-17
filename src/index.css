@@ -34,11 +34,18 @@ body {
 /* Heading ⬇️⬇️*/
 
 .header {
-  background-image: url('images/mobile/image-hero.jpg');
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-block: 50px 200px;
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  height: 120px;
+  background-color: transparent
+}
+
+.scrolled {
+  background-color: hsl(0, 0%, 0%, 0.7);
+  backdrop-filter: blur(10px);
+  height: 80px;
+  transition: all 0.5s ease;
 }
 
 a {
@@ -61,6 +68,8 @@ nav a:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .logo {
@@ -101,11 +110,21 @@ nav a:hover {
   width: 50%;
 }
 
+/* Hero ⬇️⬇️*/
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 750px;
+  background-image: url('images/mobile/image-hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
 
 .hero-container {
   display: flex;
   align-items: center;
-  margin-top: 300px;
   border: 3px solid white;
   padding: 30px;
   max-width: 550px;
@@ -114,7 +133,7 @@ nav a:hover {
 
 .hero-message {
   color: white;
-  font-size: clamp(30px, 9vw, 55px);
+  font-size: clamp(30px, 9vw, 60px);
   font-family: 'Josefin Sans';
 }
 
@@ -130,6 +149,9 @@ nav a:hover {
   padding: 50px;
   opacity: 0;
   z-index: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   transition: left ease-in 0.3s, opacity 0.3s;
 }
 
@@ -141,7 +163,6 @@ nav a:hover {
 nav>ul {
   color: white;
   list-style: none;
-  margin-top: 150px;
   font-size: 28px;
   line-height: 60px;
   font-family: 'Josefin Sans';
@@ -318,10 +339,7 @@ nav>ul {
 
 @media (min-width: 1024px) {
   .header {
-    background-image: url('./images/desktop/image-hero.jpg');
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
+    
   }
 
   .hamburger-icon {
@@ -332,9 +350,17 @@ nav>ul {
     display: flex;
   }
 
+  .hero-section {
+    background-image: url('images/desktop/image-hero.jpg');
+    height: 700px;
+    justify-content: flex-start;
+  }
+
   .hero-container {
     padding: 30px;
     margin-top: 120px;
+    max-width: 650px;
+    padding: 50px;
   }
 
   .about-section {

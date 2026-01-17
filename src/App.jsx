@@ -5,6 +5,7 @@ import About from './components/About'
 import Creation from './components/Creation'
 import Footer from './components/Footer'
 import './index.css'
+import Hero from './components/Hero'
 
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <>
-      <Header handleClick={handleClick} />
+      <Header handleClick={handleClick} menuOpen={menuOpen} />
+
+      <Hero />
 
       <Menu handleClick={handleClick} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
